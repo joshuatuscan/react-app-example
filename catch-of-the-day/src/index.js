@@ -1,5 +1,5 @@
 // let's go!
 
-// console.log("start");
+console.log("hi everybody");
 
 // alert("hi class");
