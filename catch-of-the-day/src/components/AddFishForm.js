@@ -11,7 +11,7 @@ class AddFishForm extends React.Component {
     // 1. stop the default form from submitting
     event.preventDefault();
 
-    // 2.
+    // 2. collect the form data into an object
     const fish = {
       name: this.nameRef.current.value,
       price: parseFloat(this.priceRef.current.value),
@@ -21,8 +21,11 @@ class AddFishForm extends React.Component {
     };
 
     // console.log(fish);
-
+    // 3. send to the App component to store in state
     this.props.addFish(fish);
+
+    // 4. reset the form
+    event.currentTarget.reset();
   };
 
   render() {
@@ -46,7 +49,6 @@ class AddFishForm extends React.Component {
           placeholder="Image"
           ref={this.imageRef}
         />
-
         <button type="submit">+ Add Fish</button>
       </form>
     );
