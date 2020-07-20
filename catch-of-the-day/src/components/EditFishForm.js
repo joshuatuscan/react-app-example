@@ -2,15 +2,16 @@ import React from "react";
 
 class EditFishForm extends React.Component {
   handleChange = (event) => {
-    // updating the fish
-    // 1. take a copy of the current fish
+    // update that fish
+    // 1. Take a copy of the curernt fish
     const updatedFish = {
       ...this.props.fish,
-      [event.currentTarget.name]: event.currentTarget.value,
+      [event.currentTarget.name]:
+        event.currentTarget.name === "price"
+          ? parseFloat(event.currentTarget.value)
+          : event.currentTarget.value,
     };
-
-    // 2.
-
+    // 2. updated the fish in state
     this.props.updateFish(this.props.index, updatedFish);
   };
 
@@ -30,7 +31,7 @@ class EditFishForm extends React.Component {
           value={this.props.fish.price}
         />
         <select
-          name="name"
+          name="status"
           onChange={this.handleChange}
           value={this.props.fish.status}
         >
