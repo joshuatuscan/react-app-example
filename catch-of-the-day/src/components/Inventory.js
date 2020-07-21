@@ -74,7 +74,7 @@ class Inventory extends React.Component {
     // 3. They are the owner, show the inventory
     return (
       <div className="inventory">
-        <h2>Inventory</h2>
+        <h2>Admin</h2>
         {logout}
 
         {Object.keys(this.props.fish).map((key) => (
