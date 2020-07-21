@@ -256,6 +256,9 @@ h2 {
 h3 {
   font-size: 3rem;
 }
+body {
+  background-color: #ffc0cb;
+}
 header.top {
   text-align: center;
 }
