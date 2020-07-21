@@ -257,6 +257,7 @@ h3 {
   font-size: 3rem;
 }
 header.top {
+  padding-top: 20px;
   text-align: center;
 }
 header.top h1 {
@@ -271,7 +272,7 @@ header.top h1 .ofThe {
   display: -webkit-box;
   display: flex;
   font-size: 3rem;
-  color: #f5a623;
+  color: #8b80f9;
   -webkit-box-pack: center;
           justify-content: center;
   -webkit-box-align: center;
