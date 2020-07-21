@@ -42,6 +42,12 @@ class Order extends React.Component {
     return (
       <div className="order-wrap">
         <h2>Cart</h2>
+
+        <p className="order_desc">
+          These are the items in your <span>cart</span>. Decide what you want
+          before checking out.
+        </p>
+
         <ul className="order">{orderIds.map(this.renderOrder)}</ul>
 
         <div className="total">
