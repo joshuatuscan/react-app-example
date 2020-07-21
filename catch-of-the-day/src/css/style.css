@@ -320,7 +320,6 @@ header.top h3:after {
   display: -webkit-box;
   display: flex;
   height: 90vh;
-  padding: 0 50px;
   max-width: 1500px;
   margin: 0 auto;
   margin-top: 5vh;
