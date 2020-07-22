@@ -5,6 +5,7 @@ import Order from "./Order";
 import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
 import base from "../base";
+import _ from "lodash";
 
 class App extends React.Component {
   state = {
@@ -103,16 +104,23 @@ class App extends React.Component {
   };
 
   render() {
+    const fishes_sorted = { ...this.state.fishes };
+
+    const price_fishes = _.orderBy(fishes_sorted, ["price"], ["desc"]); // Use Lodash to sort array by 'name'
+
+    console.log("sorted fishes", price_fishes);
+    // this.setState({ characters: chars });
+
     return (
       <div className="catch-of-the-day">
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
           <ul className="fishes">
-            {Object.keys(this.state.fishes).map((key) => (
+            {Object.keys(price_fishes).map((key) => (
               <Fish
                 key={key}
                 index={key}
-                details={this.state.fishes[key]}
+                details={price_fishes[key]}
                 addToOrder={this.addToOrder}
               />
             ))}
