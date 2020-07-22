@@ -104,12 +104,15 @@ class App extends React.Component {
   };
 
   render() {
-    const fishes_sorted = { ...this.state.fishes };
+    const fishes_copy = { ...this.state.fishes };
 
-    const price_fishes = _.orderBy(fishes_sorted, ["price"], ["desc"]); // Use Lodash to sort array by 'name'
-
+    // sorted by price
+    const price_fishes = _.orderBy(fishes_copy, ["price"], ["desc"]); // Use Lodash to sort array by 'name'
     console.log("sorted fishes", price_fishes);
-    // this.setState({ characters: chars });
+
+    // filtered by name
+    const name_fishes = _.filter(fishes_copy, { name: "Oysters" });
+    console.log("filtered fishes", name_fishes);
 
     return (
       <div className="catch-of-the-day">
