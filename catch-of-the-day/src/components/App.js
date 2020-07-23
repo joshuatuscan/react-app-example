@@ -5,10 +5,13 @@ import Order from "./Order";
 import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
 import base from "../base";
+import _ from "lodash";
 
 class App extends React.Component {
   state = {
     fishes: {},
+    men_fishes: {},
+    women_fishes: {},
     order: {},
   };
 
@@ -103,6 +106,16 @@ class App extends React.Component {
   };
 
   render() {
+    const fishes_copy = { ...this.state.fishes };
+
+    // sorted by price
+    const price_fishes = _.orderBy(fishes_copy, ["price"], ["desc"]); // Use Lodash to sort array by 'name'
+    console.log("sorted fishes", price_fishes);
+
+    // filtered by name
+    const name_fishes = _.filter(fishes_copy, { category: "Men" });
+    console.log("filtered fishes", name_fishes);
+
     return (
       <div className="catch-of-the-day">
         <div className="menu">
